@@ -1,25 +1,43 @@
 import logo from './logo.svg';
 import './App.css';
 
+
+const person = { name: 'Shakil', age: 29, location: 'Dhonbaria' };
+
+
 function App() {
+const departments =['cse','eee','law','mechanical','cicil','textile'];
+
   return (
     <div className="App">
+
+{
+  departments.map(dept=><li><b>Department Name:</b> {dept}</li>)
+}
+
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        
+
+        <div className="container">
+         <Name name="Shakil" inendity="Student" className='name'></Name>
+         <Name name={departments[1]} inendity="Student" class='name'></Name>
+        </div>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          My Name Is Shakil
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      
       </header>
     </div>
   );
+}
+
+function Name(props){
+  console.log(props);
+  return(
+    <div>
+      <h1>{props.name} {props.inendity}</h1>
+    </div>
+  )
 }
 
 export default App;
